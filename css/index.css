@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+:root {
+    --width: 80vw;
+    --height: 80vh;
+    --ball-width: 50px;
+    --ball-height: 50px;
+}
+
+.container {
+    width: calc(var(--width) +  var(--ball-width));
+    height: calc(var(--height) +  var(--ball-height));
+    margin: 5vh auto;
+    background-color: bisque;
+}
+
+.ball {
+    position:relative;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    border-radius: 50%;
+    place-self: start start;
+}
+
+
+.ball:active {
+    animation: ball-easeOutBounce 3s linear 1;
+}
+
+@keyframes ball-easeOutBounce {
+	0% {
+        translate: 0 0;
+	}
+
+	12% {
+        translate: calc(0.12 * var(--width)) calc(0.2089 * var(--height));
+	}
+
+	24% {
+        translate: calc(0.24 * var(--width)) calc(0.5356 * var(--height));
+	}
+
+	36% {
+        translate: calc(0.36 * var(--width)) calc(0.9801 * var(--height));
+	}
+
+	54% {
+        translate: calc(0.54 * var(--width)) calc(0.6502 * var(--height));
+	}
+
+	74% {
+        translate: calc(0.74 * var(--width)) calc(0.9837 * var(--height));
+	}
+
+	82% {
+        translate: calc(0.82 * var(--width)) calc(0.8375 * var(--height));
+	}
+
+	92% {
+        translate: calc(0.92 * var(--width)) calc(0.9934 * var(--height));
+	}
+
+	96% {
+        translate: calc(0.96 * var(--width)) calc(0.9346 * var(--height));
+	}
+
+	100% {
+        translate: var(--width) calc(1 * var(--height));
+	}
+
+}
